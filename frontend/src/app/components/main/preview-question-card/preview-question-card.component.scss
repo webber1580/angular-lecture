@@ -1,0 +1,60 @@
+mat-card {
+    cursor: pointer;
+    height: 5rem;
+    margin: 1rem 0;
+
+    .card-container {
+        height: 100%;
+        display: flex;
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 30%;
+
+            .stats {
+                width: 4rem;
+                height: 4rem;
+                font-size: 0.7rem;
+
+                border: 1px solid;
+                border-radius: 5px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                strong {
+                    font-size: .9rem;
+                }
+            }
+
+            .green-stat {
+                color: green;
+            }
+
+            .red-stat {
+                color: orangered;
+            }
+
+            .grey-stat {
+                color: dimgrey;
+            }
+        }
+
+        .comment-container {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+
+            p {
+                margin: 0;
+                align-self: flex-end;
+            }
+        }
+    }
+}

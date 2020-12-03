@@ -29,7 +29,7 @@ namespace backend
                 Theme = "Отношения",
                 Data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 User = Users[random.Next(0, 3)],
-                Rating = random.Next(-10, 10),
+                Rating = random.Next(-3, 7),
                 Comments = GenerateComments(),
                 Answers = GenerateAnswers("Отношения"),
                 Tags = new string[] {"university", "love", "food"}
@@ -39,7 +39,7 @@ namespace backend
                 Theme = "Универ",
                 Data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 User = Users[random.Next(0, 3)],
-                Rating = random.Next(-10, 10),
+                Rating = random.Next(-3, 7),
                 Comments = GenerateComments(),
                 Answers = GenerateAnswers("Универ"),
                 Tags = new string[] {"university", "love", "food"}
@@ -49,17 +49,17 @@ namespace backend
                 Theme = "Python mongoDb exception",
                 Data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 User = Users[random.Next(0, 3)],
-                Rating = random.Next(-10, 10),
+                Rating = random.Next(-3, 7),
                 Comments = GenerateComments(),
                 Answers = GenerateAnswers("Python mongoDb exception"),
                 Tags = new string[] {"university", "love", "food"}
             });
             result.Add(new Question()
             {
-                Theme = "Два условно бесконечных цикла вложенные друг в друга",
+                Theme = "Два условно бесконечных цикла",
                 Data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 User = Users[random.Next(0, 3)],
-                Rating = random.Next(-10, 10),
+                Rating = random.Next(-3, 7),
                 Comments = GenerateComments(),
                 Answers = GenerateAnswers("Два условно бесконечных цикла вложенные друг в друга"),
                 Tags = new string[] {"university", "love", "food"}
@@ -69,7 +69,7 @@ namespace backend
                 Theme = "Модный лук на выпускной",
                 Data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 User = Users[random.Next(0, 3)],
-                Rating = random.Next(-10, 10),
+                Rating = random.Next(-3, 7),
                 Comments = GenerateComments(),
                 Answers = GenerateAnswers("Модный лук на выпускной"),
                 Tags = new string[] {"university", "love", "food"}
@@ -82,16 +82,19 @@ namespace backend
         {
             var result = new List<Answer>();
             var random = new Random();
-
-            result.Add(new Answer()
-            {
-                Theme = theme,
-                Rating = random.Next(-1, 10),
-                User = Users[random.Next(0, 3)],
-                Comments = GenerateComments(),
-                IsCorrect = false
-            });
             
+            for (int i = 0; i < random.Next(0, 5); i++)
+            {
+                result.Add(new Answer()
+                {
+                    Theme = theme,
+                    Rating = random.Next(-1, 10),
+                    User = Users[random.Next(0, 3)],
+                    Comments = GenerateComments(),
+                    IsCorrect = false
+                });
+            }
+
             return result;
         }
 

@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
-    <button mat-button>Home</button>
+    <button mat-button (click)="onHomeClicked()">Home</button>
     <button mat-button>Account</button>
 </mat-toolbar>
 
 
 <div class="main-content">
-    <app-main></app-main>
+    <app-main *ngIf="!question" (extendQuestion)="onQuestionExtended($event)"></app-main>
+    <app-extended-question-card *ngIf="question" [question]="question"></app-extended-question-card>
 </div>

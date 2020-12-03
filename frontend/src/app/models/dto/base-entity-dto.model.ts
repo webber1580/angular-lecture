@@ -1,10 +1,10 @@
-import {UserDto} from './user-dto.model';
-import {CommentDto} from './comment-dto.model';
+import {User} from './user-dto.model';
+import {Comment} from './comment-dto.model';
 
-export interface BaseEntityDto {
+export interface BaseEntity {
     id: number;
     theme: string;
-    user: UserDto;
+    user: User;
     rating: number;
-    comments: CommentDto[];
+    comments: Comment[];
 }

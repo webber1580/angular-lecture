@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Question} from '../../../models/dto/question-dto.model';
 
 @Component({
-  selector: 'app-preview-question-card',
-  templateUrl: './preview-question-card.component.html',
-  styleUrls: ['./preview-question-card.component.scss']
+    selector: 'app-preview-question-card',
+    templateUrl: './preview-question-card.component.html',
+    styleUrls: ['./preview-question-card.component.scss']
 })
 export class PreviewQuestionCardComponent implements OnInit {
 
-  constructor() { }
+    @Output() public extendQuestion: EventEmitter<Question> = new EventEmitter<Question>();
+    @Input() public question: Question;
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+    }
+
+    onCardClicked() {
+        this.extendQuestion.emit({...this.question});
+    }
 
 }

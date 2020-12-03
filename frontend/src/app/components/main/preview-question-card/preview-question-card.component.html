@@ -1,1 +1,24 @@
-<p>preview-question-card works!</p>
+<mat-card matRipple (click)="onCardClicked()">
+    <div class="card-container">
+        <div class="stats-container">
+            <div [ngClass]="{
+                    'green-stat': question.rating > 0,
+                    'grey-stat': question.rating == 0,
+                    'red-stat': question.rating < 0
+                }" class="stats"
+            >
+                <strong>{{question.rating}}</strong>
+                <span>Рейтинг</span>
+            </div>
+            <div class="stats grey-stat">
+                <strong>{{question.answers.length}}</strong>
+                <span>Ответов</span>
+            </div>
+        </div>
+
+        <div class="comment-container">
+            <h2>{{question.theme}}</h2>
+            <p>{{question.user.name}} {{question.user.surname}}</p>
+        </div>
+    </div>
+</mat-card>

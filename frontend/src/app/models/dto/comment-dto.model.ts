@@ -1,7 +1,7 @@
-import {UserDto} from './user-dto.model';
+import {User} from './user-dto.model';
 
-export interface CommentDto {
+export interface Comment {
     id: number;
-    user: UserDto;
+    user: User;
     data: string;
 }

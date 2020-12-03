@@ -1,7 +1,7 @@
-import {BaseEntityDto} from './base-entity-dto.model';
-import {AnswerDto} from './answer-dto.model';
+import {BaseEntity} from './base-entity-dto.model';
+import {Answer} from './answer-dto.model';
 
-export interface QuestionDto extends BaseEntityDto {
-    answers: AnswerDto[];
+export interface Question extends BaseEntity {
+    answers: Answer[];
     tags: string[];
 }

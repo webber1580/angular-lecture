@@ -2,3 +2,8 @@
     <h1>Вопросы</h1>
     <button mat-raised-button color="accent">Задать вопрос</button>
 </div>
+
+<app-preview-question-card *ngFor="let question of questionList"
+    [question]="question"
+    (extendQuestion)="onQuestionExtended($event)"
+></app-preview-question-card>

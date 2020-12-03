@@ -1,5 +1,5 @@
-import {BaseEntityDto} from './base-entity-dto.model';
+import {BaseEntity} from './base-entity-dto.model';
 
-export interface AnswerDto extends BaseEntityDto {
+export interface Answer extends BaseEntity {
     isCorrect: boolean;
 }
