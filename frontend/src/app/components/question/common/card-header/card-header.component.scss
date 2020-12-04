@@ -1,0 +1,56 @@
+.header {
+    display: flex;
+    align-items: flex-end;
+
+    .avatar {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 1rem .5rem;
+    }
+}
+
+.main-content {
+    display: flex;
+
+    mat-card-actions {
+        width: 2rem;
+        margin: 0 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .rating {
+            font-size: 1rem;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 5px;
+            opacity: .5;
+
+            color: ghostwhite;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 2rem;
+            transition: .5s;
+        }
+
+        .green-stat {
+            background-color: green;
+        }
+
+        .red-stat {
+            background-color: orangered;
+        }
+
+        .grey-stat {
+            background-color: dimgrey;
+        }
+    }
+
+    mat-card-content {
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
+}

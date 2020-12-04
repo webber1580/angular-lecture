@@ -11,7 +11,7 @@ namespace backend.Models
         [JsonProperty("user")]
         public User User { get; set; }
 
-        [JsonProperty("data")]
-        public string Data { get; set; }
+        [JsonProperty("content")]
+        public string Content { get; set; }
     }
 }

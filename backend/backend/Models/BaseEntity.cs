@@ -12,8 +12,8 @@ namespace backend.Models
         [JsonProperty("theme")]
         public string Theme { get; set; }
         
-        [JsonProperty("data")]
-        public string Data { get; set; }
+        [JsonProperty("content")]
+        public string Content { get; set; }
 
         [JsonProperty("user")]
         public User User { get; set; }

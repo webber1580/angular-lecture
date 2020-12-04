@@ -5,5 +5,5 @@
 
 <app-preview-question-card *ngFor="let question of questionList"
     [question]="question"
-    (extendQuestion)="onQuestionExtended($event)"
+    routerLink="/question/{{question.id}}"
 ></app-preview-question-card>

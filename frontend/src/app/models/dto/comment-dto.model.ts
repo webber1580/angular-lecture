@@ -3,5 +3,5 @@ import {User} from './user-dto.model';
 export interface Comment {
     id: number;
     user: User;
-    data: string;
+    content: string;
 }

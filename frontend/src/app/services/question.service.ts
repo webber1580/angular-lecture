@@ -11,23 +11,23 @@ export class QuestionService {
 
     constructor(private http: HttpClient) { }
 
-    public getSources(): Observable<Question[]> {
+    public getQuestions(): Observable<Question[]> {
         return this.http.get<Question[]>(`${this.url}`);
     }
 
-    public getSource(id: number): Observable<Question> {
+    public getQuestion(id: number): Observable<Question> {
         return this.http.get<Question>(`${this.url}/${id}`);
     }
 
-    public createSource(source: Question): Observable<number> {
+    public createQuestion(source: Question): Observable<number> {
         return this.http.post<number>(this.url, source);
     }
 
-    public updateSource(id: number, source: Question): Observable<void> {
-        return this.http.put<void>(`${this.url}/${id}`, source);
+    public updateQuestion(id: number, source: Question): Observable<any> {
+        return this.http.put(`${this.url}/${id}`, source);
     }
 
-    public deleteSource(id: number): Observable<void> {
-        return this.http.delete<void>(`${this.url}/${id}`);
+    public deleteQuestion(id: number): Observable<any> {
+        return this.http.delete(`${this.url}/${id}`);
     }
 }

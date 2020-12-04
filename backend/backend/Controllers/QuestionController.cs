@@ -17,10 +17,9 @@ namespace backend.Controllers
         public IActionResult GetQuestions()
         {
             return Ok(_ctx.Questions);;
-
         }
         
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetQuestion(int id)
         {
             return Ok(_ctx.Questions[id]);
@@ -33,14 +32,14 @@ namespace backend.Controllers
             return Ok();
         }
         
-        [HttpPut("id")]
+        [HttpPut("{id}")]
         public IActionResult UpdateQuestion(int id, [FromBody] Question question)
         {
             _ctx.Questions[id] = question;
             return Ok();
         }
         
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteQuestion(int id)
         {
             _ctx.Questions.RemoveAt(id);

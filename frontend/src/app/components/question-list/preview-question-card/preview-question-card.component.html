@@ -1,4 +1,4 @@
-<mat-card matRipple (click)="onCardClicked()">
+<mat-card matRipple>
     <div class="card-container">
         <div class="stats-container">
             <div [ngClass]="{
@@ -18,7 +18,7 @@
 
         <div class="comment-container">
             <h2>{{question.theme}}</h2>
-            <p>{{question.user.name}} {{question.user.surname}}</p>
+            <span>{{question.user.name}} {{question.user.surname}}</span>
         </div>
     </div>
 </mat-card>

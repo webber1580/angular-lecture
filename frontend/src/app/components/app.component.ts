@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Question} from '../models/dto/question-dto.model';
 
 @Component({
     selector: 'app-root',
@@ -8,13 +7,4 @@ import {Question} from '../models/dto/question-dto.model';
 })
 export class AppComponent {
 
-    public question: Question;
-
-    onQuestionExtended(question: Question) {
-        this.question = question;
-    }
-
-    onHomeClicked() {
-        this.question = null;
-    }
 }

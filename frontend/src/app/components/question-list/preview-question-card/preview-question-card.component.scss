@@ -11,6 +11,7 @@ mat-card {
             display: flex;
             justify-content: space-around;
             align-items: center;
+            padding: 1rem;
             width: 30%;
 
             .stats {
@@ -51,7 +52,7 @@ mat-card {
             justify-content: space-between;
 
 
-            p {
+            span {
                 margin: 0;
                 align-self: flex-end;
             }

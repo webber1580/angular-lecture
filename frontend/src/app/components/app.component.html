@@ -1,10 +1,7 @@
 <mat-toolbar color="primary">
-    <button mat-button (click)="onHomeClicked()">Home</button>
-    <button mat-button>Account</button>
+    <button mat-button routerLink="home">Home</button>
 </mat-toolbar>
 
-
 <div class="main-content">
-    <app-main *ngIf="!question" (extendQuestion)="onQuestionExtended($event)"></app-main>
-    <app-extended-question-card *ngIf="question" [question]="question"></app-extended-question-card>
+    <router-outlet></router-outlet>
 </div>

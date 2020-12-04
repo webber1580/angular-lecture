@@ -3,11 +3,11 @@ import {QuestionService} from '../../services/question.service';
 import {Question} from '../../models/dto/question-dto.model';
 
 @Component({
-    selector: 'app-main',
-    templateUrl: './main.component.html',
-    styleUrls: ['./main.component.scss']
+    selector: 'app-question-list',
+    templateUrl: './question-list.component.html',
+    styleUrls: ['./question-list.component.scss']
 })
-export class MainComponent implements OnInit {
+export class QuestionListComponent implements OnInit {
 
     @Output() public extendQuestion: EventEmitter<Question> = new EventEmitter<Question>();
 
@@ -15,11 +15,13 @@ export class MainComponent implements OnInit {
     constructor(private questionService: QuestionService) { }
 
     ngOnInit(): void {
-        this.questionService.getSources().subscribe(sources => this.questionList = sources);
+        this.questionService.getQuestions().subscribe(
+            questionList => this.questionList = questionList,
+            err => console.error('Error: ', err)
+        );
     }
 
     onQuestionExtended(question: Question) {
         this.extendQuestion.emit({...question});
     }
-
 }

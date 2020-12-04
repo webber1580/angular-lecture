@@ -6,18 +6,7 @@ import {Question} from '../../../models/dto/question-dto.model';
     templateUrl: './preview-question-card.component.html',
     styleUrls: ['./preview-question-card.component.scss']
 })
-export class PreviewQuestionCardComponent implements OnInit {
+export class PreviewQuestionCardComponent {
 
-    @Output() public extendQuestion: EventEmitter<Question> = new EventEmitter<Question>();
     @Input() public question: Question;
-
-    constructor() { }
-
-    ngOnInit(): void {
-    }
-
-    onCardClicked() {
-        this.extendQuestion.emit({...this.question});
-    }
-
 }
