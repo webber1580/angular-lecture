@@ -9,8 +9,6 @@ import {Question} from '../../models/dto/question-dto.model';
 })
 export class QuestionListComponent implements OnInit {
 
-    @Output() public extendQuestion: EventEmitter<Question> = new EventEmitter<Question>();
-
     public questionList: Question[];
     constructor(private questionService: QuestionService) { }
 
@@ -19,9 +17,5 @@ export class QuestionListComponent implements OnInit {
             questionList => this.questionList = questionList,
             err => console.error('Error: ', err)
         );
-    }
-
-    onQuestionExtended(question: Question) {
-        this.extendQuestion.emit({...question});
     }
 }

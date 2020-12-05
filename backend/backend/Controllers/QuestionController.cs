@@ -1,4 +1,5 @@
-﻿using backend.Models;
+﻿using System;
+using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
@@ -36,6 +37,33 @@ namespace backend.Controllers
         public IActionResult UpdateQuestion(int id, [FromBody] Question question)
         {
             _ctx.Questions[id] = question;
+            return Ok();
+        }
+        
+        [HttpPut("QuestionComment/{id}")]
+        public IActionResult AddQuestionComment(int id, [FromBody] Comment comment)
+        {
+            var random = new Random();
+            comment.Id = _ctx.Questions[id].Comments.Count;
+            comment.User = _ctx.Users[random.Next(0, 3)];
+            _ctx.Questions[id].Comments.Add(comment);
+            return Ok(_ctx.Questions[id]);
+        }
+        
+        [HttpPut("AnswerComment/{questionId}/{answerId}")]
+        public IActionResult AddAnswerComment(int questionId, int answerId, [FromBody] Comment comment)
+        {
+            var random = new Random();
+            comment.Id = _ctx.Questions[questionId].Answers[answerId].Comments.Count;
+            comment.User = _ctx.Users[random.Next(0, 3)];
+            _ctx.Questions[questionId].Answers[answerId].Comments.Add(comment);
+            return Ok(_ctx.Questions[questionId].Answers[answerId]);
+        }
+        
+        [HttpPut("Answer/{questionId}/{answerId}")]
+        public IActionResult UpdateAnswer(int questionId, int answerId, [FromBody] Answer answer)
+        {
+            _ctx.Questions[questionId].Answers[answerId] = answer;
             return Ok();
         }
         

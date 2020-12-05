@@ -22,6 +22,6 @@ namespace backend.Models
         public int Rating { get; set; }
 
         [JsonProperty("comments")] 
-        public IEnumerable<Comment> Comments { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }

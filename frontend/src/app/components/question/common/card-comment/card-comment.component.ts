@@ -6,11 +6,7 @@ import {Comment} from '../../../../models/dto/comment-dto.model';
     templateUrl: './card-comment.component.html',
     styleUrls: ['./card-comment.component.scss']
 })
-export class CardCommentComponent implements  OnInit{
+export class CardCommentComponent {
 
     @Input() public comment: Comment;
-
-    ngOnInit() {
-        console.log(this.comment);
-    }
 }

@@ -92,10 +92,12 @@ namespace backend
             {
                 result.Add(new Answer()
                 {
+                    Id = i,
                     Theme = theme,
                     Rating = random.Next(-1, 10),
                     User = Users[random.Next(0, 3)],
                     Comments = GenerateComments(),
+                    Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                     IsCorrect = false
                 });
             }
@@ -112,6 +114,7 @@ namespace backend
             {
                 result.Add(new Comment()
                 {
+                    Id = i,
                     User = Users[random.Next(0, 3)],
                     Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 });

@@ -7,9 +7,9 @@ namespace backend.Models
     public class Question : BaseEntity
     {
         [JsonProperty("answers")]
-        public IEnumerable<Answer> Answers { get; set; }
+        public List<Answer> Answers { get; set; }
 
         [JsonProperty("tags")]
-        public IEnumerable<string> Tags { get; set; }
+        public string[] Tags { get; set; }
     }
 }

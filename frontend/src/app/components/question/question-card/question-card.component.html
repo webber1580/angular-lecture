@@ -5,5 +5,5 @@
         <app-card-comment [comment]="comment"></app-card-comment>
     </div>
     <mat-divider></mat-divider>
-
+    <app-card-add-comment [id]="question.id" (addComment)="onAddQuestionComment($event)"></app-card-add-comment>
 </mat-card>

@@ -20,6 +20,9 @@ import { CardCommentComponent } from './components/question/common/card-comment/
 import { CardAddCommentComponent } from './components/question/common/card-add-comment/card-add-comment.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { AppRoutingModule } from './app-routing.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -44,6 +47,9 @@ import { AppRoutingModule } from './app-routing.module';
         MatRippleModule,
         MatIconModule,
         MatDividerModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
     ],
     providers: [QuestionService],
     bootstrap: [AppComponent]

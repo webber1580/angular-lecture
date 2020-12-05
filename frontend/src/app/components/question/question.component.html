@@ -3,5 +3,8 @@
     <button mat-raised-button color="accent">Добавить ответ</button>
 </div>
 
-<app-question-card [question]="question"></app-question-card>
-
+<div class="main-content">
+    <app-question-card [question]="question"></app-question-card>
+    <h2>{{question.answers.length}} ответов</h2>
+    <app-answer-card *ngFor="let answer of question.answers" [answer]="answer" [questionId]="question.id"></app-answer-card>
+</div>

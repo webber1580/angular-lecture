@@ -1,1 +1,9 @@
-<p>card-add-comment works!</p>
+<div class="card-add-comment-container">
+    <mat-form-field appearance="outline">
+        <mat-label>Add a comment</mat-label>
+        <input matInput [(ngModel)]="comment" (keyup.enter)="onAddComment()">
+    </mat-form-field>
+    <button mat-icon-button color="primary" (click)="onAddComment()" [disabled]="!comment">
+        <mat-icon>send</mat-icon>
+    </button>
+</div>
