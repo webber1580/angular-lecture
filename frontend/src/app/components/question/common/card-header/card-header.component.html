@@ -11,7 +11,8 @@
         <button mat-icon-button (click)="onUpdateRatingClick(1)">
             <mat-icon>expand_less</mat-icon>
         </button>
-        <div [ngClass]="{
+        <div [ngStyle]="{ 'opacity': getRatingOpacity() }"
+            [ngClass]="{
                     'green-stat': data.rating > 0,
                     'grey-stat': data.rating == 0,
                     'red-stat': data.rating < 0

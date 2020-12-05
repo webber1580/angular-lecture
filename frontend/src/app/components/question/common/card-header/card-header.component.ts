@@ -14,4 +14,16 @@ export class CardHeaderComponent {
     onUpdateRatingClick(inc: number) {
         this.updateRating.emit(inc);
     }
+
+    getRatingOpacity() {
+        if (this.data.rating === 0) {
+            return 0.5;
+        } else if (Math.abs(this.data.rating) < 3) {
+            return 0.3;
+        } else {
+            return Math.abs(this.data.rating) / 10;
+        }
+    }
+
+
 }
