@@ -20,7 +20,16 @@ export class AnswerCardComponent {
     onUpdateAnswerRating(updateAnswerRating: UpdateEntityRating) {
         const updatedAnswer = {...this.answer};
         updatedAnswer.rating += updateAnswerRating.value;
-        this.questionService.updateAnswer(this.questionId, updateAnswerRating.id, updatedAnswer).subscribe(
+        this.questionService.updateAnswer(this.questionId, this.answer.id, updatedAnswer).subscribe(
+            () => this.answer = updatedAnswer,
+            (err) => console.error('Error: ', err)
+        );
+    }
+
+    onRightAnswerSelected() {
+        const updatedAnswer = {...this.answer};
+        updatedAnswer.isCorrect = true;
+        this.questionService.updateAnswer(this.questionId, this.answer.id, updatedAnswer).subscribe(
             () => this.answer = updatedAnswer,
             (err) => console.error('Error: ', err)
         );

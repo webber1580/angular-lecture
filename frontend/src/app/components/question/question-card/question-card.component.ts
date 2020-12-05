@@ -18,7 +18,7 @@ export class QuestionCardComponent {
     onUpdateQuestionRating(updateQuestionRating: UpdateEntityRating) {
         const updatedQuestion = {...this.question};
         updatedQuestion.rating += updateQuestionRating.value;
-        this.questionService.updateQuestion(updateQuestionRating.id, updatedQuestion).subscribe(
+        this.questionService.updateQuestion(this.question.id, updatedQuestion).subscribe(
             () => this.question = updatedQuestion,
             (err) => console.error('Error: ', err)
         );

@@ -1,9 +1,18 @@
 <mat-card>
     <app-card-header [data]="answer" (updateRating)="onUpdateAnswerRating($event)"></app-card-header>
+    <button *ngIf="!answer.isCorrect"
+        (click)="onRightAnswerSelected()"
+        mat-button color="primary"
+    >
+        Пометить ответ как правильный
+    </button>
+    <mat-icon *ngIf="answer.isCorrect" class="right-answer">done_outline</mat-icon>
+
     <div *ngFor="let comment of answer.comments">
         <mat-divider></mat-divider>
         <app-card-comment [comment]="comment"></app-card-comment>
     </div>
+
     <mat-divider></mat-divider>
     <app-card-add-comment [id]="answer.id" (addComment)="onAddQuestionComment($event)"></app-card-add-comment>
 </mat-card>

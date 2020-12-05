@@ -1,3 +1,14 @@
 mat-card {
     margin-bottom: 2rem;
+
+    button {
+        margin-bottom: 1rem;
+    }
+
+    .right-answer {
+        margin-left: 1.25rem;
+        margin-bottom: 1.75rem;
+        color: green;
+        transform: scale(1.5);
+    }
 }
