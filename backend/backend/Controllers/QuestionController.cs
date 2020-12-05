@@ -29,14 +29,27 @@ namespace backend.Controllers
         [HttpPost]
         public IActionResult CreateQuestion([FromBody] Question question)
         {
+            var random = new Random();
+            question.Id = _ctx.Questions.Count;
+            question.User = _ctx.Users[random.Next(0, 3)];
             _ctx.Questions.Add(question);
             return Ok();
         }
-        
+
         [HttpPut("{id}")]
         public IActionResult UpdateQuestion(int id, [FromBody] Question question)
         {
             _ctx.Questions[id] = question;
+            return Ok();
+        }
+        
+        [HttpPut("QuestionAnswer/{id}")]
+        public IActionResult AddQuestionAnswer(int id, [FromBody] Answer answer)
+        {
+            var random = new Random();
+            answer.Id = _ctx.Questions[id].Answers.Count;
+            answer.User = _ctx.Users[random.Next(0, 3)];
+            _ctx.Questions[id].Answers.Add(answer);
             return Ok();
         }
         

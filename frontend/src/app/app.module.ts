@@ -23,6 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
+import { AddQuestionComponent } from './components/add-question/add-question.component';
+import { AddAnswerComponent } from './components/add-answer/add-answer.component';
 
 @NgModule({
     declarations: [
@@ -35,6 +37,8 @@ import {FormsModule} from '@angular/forms';
         CardHeaderComponent,
         CardCommentComponent,
         CardAddCommentComponent,
+        AddQuestionComponent,
+        AddAnswerComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,6 +1,6 @@
 <div class="card-add-comment-container">
     <mat-form-field appearance="outline">
-        <mat-label>Add a comment</mat-label>
+        <mat-label>Добавить комментарий</mat-label>
         <input matInput [(ngModel)]="comment" (keyup.enter)="onAddComment()">
     </mat-form-field>
     <button mat-icon-button color="primary" (click)="onAddComment()" [disabled]="!comment">

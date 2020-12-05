@@ -1,0 +1,15 @@
+<div class="add-answer-content">
+    <h1>Добавить ответ</h1>
+    <mat-card>
+        <h3>Ответ</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Вопрос</mat-label>
+            <textarea cdkTextareaAutosize cdkAutosizeMinRows="10" matInput [(ngModel)]="newAnswer.content"></textarea>
+        </mat-form-field>
+
+        <div class="buttons-container">
+            <button mat-button routerLink="/question/{{questionId}}">Отмена</button>
+            <button mat-raised-button color="primary" (click)="onQuestionAdd()">Добавить</button>
+        </div>
+    </mat-card>
+</div>

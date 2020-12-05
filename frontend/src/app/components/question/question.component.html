@@ -1,10 +1,8 @@
 <div class="header">
     <h1>{{question.theme}}</h1>
-    <button mat-raised-button color="accent">Добавить ответ</button>
+    <button routerLink="/add-answer/{{question.id}}" mat-raised-button color="accent">Добавить ответ</button>
 </div>
 
-<div class="main-content">
-    <app-question-card [question]="question"></app-question-card>
-    <h2>{{question.answers.length}} ответов</h2>
-    <app-answer-card *ngFor="let answer of question.answers" [answer]="answer" [questionId]="question.id"></app-answer-card>
-</div>
+<app-question-card [question]="question"></app-question-card>
+<h2>{{question.answers.length}} ответов</h2>
+<app-answer-card *ngFor="let answer of question.answers" [answer]="answer" [questionId]="question.id"></app-answer-card>

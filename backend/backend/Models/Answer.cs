@@ -6,6 +6,6 @@ namespace backend.Models
     public class Answer : BaseEntity
     {
         [JsonProperty("isCorrect")]
-        public bool IsCorrect { get; set; }
+        public bool? IsCorrect { get; set; }
     }
 }

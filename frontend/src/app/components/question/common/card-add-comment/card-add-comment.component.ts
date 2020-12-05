@@ -1,6 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {UpdateEntityRating} from '../../../../models/update-entity-rating.model';
-import {AddEntityComment} from '../../../../models/add-entity-comment.model';
 
 @Component({
     selector: 'app-card-add-comment',
@@ -9,13 +7,12 @@ import {AddEntityComment} from '../../../../models/add-entity-comment.model';
 })
 export class CardAddCommentComponent {
 
-    @Input() public id: number;
-    @Output() public addComment: EventEmitter<AddEntityComment> = new EventEmitter<AddEntityComment>();
+    @Output() public addComment: EventEmitter<string> = new EventEmitter<string>();
     public comment = '';
 
     onAddComment() {
         if (this.comment) {
-            this.addComment.emit({ id: this.id, comment: this.comment });
+            this.addComment.emit(this.comment);
             this.comment = '';
         }
     }

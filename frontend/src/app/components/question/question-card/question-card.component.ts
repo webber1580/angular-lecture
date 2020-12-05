@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {QuestionService} from '../../../services/question.service';
 import {Question} from '../../../models/dto/question-dto.model';
-import {UpdateEntityRating} from '../../../models/update-entity-rating.model';
-import {AddEntityComment} from '../../../models/add-entity-comment.model';
 
 @Component({
     selector: 'app-question-card',
@@ -15,17 +13,17 @@ export class QuestionCardComponent {
 
     constructor(private questionService: QuestionService) { }
 
-    onUpdateQuestionRating(updateQuestionRating: UpdateEntityRating) {
+    onUpdateQuestionRating(inc: number) {
         const updatedQuestion = {...this.question};
-        updatedQuestion.rating += updateQuestionRating.value;
+        updatedQuestion.rating += inc;
         this.questionService.updateQuestion(this.question.id, updatedQuestion).subscribe(
             () => this.question = updatedQuestion,
             (err) => console.error('Error: ', err)
         );
     }
 
-    onAddQuestionComment(addQuestionComment: AddEntityComment) {
-        this.questionService.addQuestionComment(addQuestionComment.id, addQuestionComment.comment).subscribe(
+    onAddQuestionComment(comment: string) {
+        this.questionService.addQuestionComment(this.question.id, comment).subscribe(
             updatedQuestion => this.question = updatedQuestion,
             err => console.error('Error: ', err)
         );

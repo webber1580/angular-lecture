@@ -6,18 +6,18 @@ namespace backend.Models
     public class User
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
         
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         
         [JsonProperty("surname")]
-        public string Surname { get; set; }
+        public string? Surname { get; set; }
         
         [JsonProperty("nickname")]
-        public string Nickname { get; set; }
+        public string? Nickname { get; set; }
         
         [JsonProperty("photo")]
-        public string Photo { get; set; }
+        public string? Photo { get; set; }
     }
 }

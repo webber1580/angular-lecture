@@ -37,6 +37,10 @@ export class QuestionService {
         return this.http.put<Question>(`${this.url}/QuestionComment/${id}`, source);
     }
 
+    public addQuestionAnswer(id: number, answer: Answer): Observable<any>  {
+        return this.http.put<any>(`${this.url}/QuestionAnswer/${id}`, answer);
+    }
+
     public addAnswerComment(questionId: number, answerId: number, comment: string): Observable<Answer>  {
         const source = { content: comment };
         return this.http.put<Answer>(`${this.url}/AnswerComment/${questionId}/${answerId}`, source);

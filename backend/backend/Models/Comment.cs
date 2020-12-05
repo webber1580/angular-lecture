@@ -6,12 +6,12 @@ namespace backend.Models
     public class Comment
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
         
         [JsonProperty("user")]
-        public User User { get; set; }
+        public User? User { get; set; }
 
         [JsonProperty("content")]
-        public string Content { get; set; }
+        public string? Content { get; set; }
     }
 }

@@ -1,0 +1,21 @@
+<div class="add-question-content">
+    <h1>Задать вопрос</h1>
+    <mat-card>
+        <h3>Тема вопроса</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Тема вопроса</mat-label>
+            <input matInput [(ngModel)]="newQuestion.theme">
+        </mat-form-field>
+
+        <h3>Вопрос</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>Вопрос</mat-label>
+            <textarea cdkTextareaAutosize cdkAutosizeMinRows="10" matInput [(ngModel)]="newQuestion.content"></textarea>
+        </mat-form-field>
+
+        <div class="buttons-container">
+            <button mat-button routerLink="/home">Отмена</button>
+            <button mat-raised-button color="primary" (click)="onQuestionAdd()">Добавить</button>
+        </div>
+    </mat-card>
+</div>

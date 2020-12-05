@@ -1,8 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Question} from '../../../models/dto/question-dto.model';
 import {QuestionService} from '../../../services/question.service';
-import {UpdateEntityRating} from '../../../models/update-entity-rating.model';
-import {AddEntityComment} from '../../../models/add-entity-comment.model';
 import {Answer} from '../../../models/dto/answer-dto.model';
 
 @Component({
@@ -17,9 +14,9 @@ export class AnswerCardComponent {
 
     constructor(private questionService: QuestionService) { }
 
-    onUpdateAnswerRating(updateAnswerRating: UpdateEntityRating) {
+    onUpdateAnswerRating(inc: number) {
         const updatedAnswer = {...this.answer};
-        updatedAnswer.rating += updateAnswerRating.value;
+        updatedAnswer.rating += inc;
         this.questionService.updateAnswer(this.questionId, this.answer.id, updatedAnswer).subscribe(
             () => this.answer = updatedAnswer,
             (err) => console.error('Error: ', err)
@@ -35,8 +32,8 @@ export class AnswerCardComponent {
         );
     }
 
-    onAddQuestionComment(addAnswerComment: AddEntityComment) {
-        this.questionService.addAnswerComment(this.questionId, addAnswerComment.id, addAnswerComment.comment).subscribe(
+    onAddQuestionComment(comment: string) {
+        this.questionService.addAnswerComment(this.questionId, this.answer.id, comment).subscribe(
             updatedAnswer => this.answer = updatedAnswer,
             err => console.error('Error: ', err)
         );

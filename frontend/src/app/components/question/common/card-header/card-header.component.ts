@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {BaseEntity} from '../../../../models/dto/base-entity-dto.model';
-import {UpdateEntityRating} from '../../../../models/update-entity-rating.model';
 
 @Component({
     selector: 'app-card-header',
@@ -10,10 +9,9 @@ import {UpdateEntityRating} from '../../../../models/update-entity-rating.model'
 export class CardHeaderComponent {
 
     @Input() public data: BaseEntity;
-    @Output() public updateRating: EventEmitter<UpdateEntityRating> = new EventEmitter<UpdateEntityRating>();
+    @Output() public updateRating: EventEmitter<number> = new EventEmitter<number>();
 
     onUpdateRatingClick(inc: number) {
-        this.updateRating.emit({ id: this.data.id, value: inc });
+        this.updateRating.emit(inc);
     }
-
 }
