@@ -1,5 +1,6 @@
 <mat-card>
     <app-card-header [data]="question" (updateRating)="onUpdateQuestionRating($event)"></app-card-header>
+    <app-tag-list class="question-card-tags" [tagList]="question.tags"></app-tag-list>
     <div *ngFor="let comment of question.comments">
         <mat-divider></mat-divider>
         <app-card-comment [comment]="comment"></app-card-comment>

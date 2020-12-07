@@ -10,7 +10,7 @@ const routes: Routes = [
     { path: 'question/:id', component: QuestionComponent },
     { path: 'add-question', component: AddQuestionComponent },
     { path: 'add-answer/:questionId', component: AddAnswerComponent },
-    // { path: '**', redirectTo: 'home' },
+    { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

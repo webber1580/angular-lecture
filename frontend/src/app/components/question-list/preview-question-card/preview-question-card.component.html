@@ -18,7 +18,10 @@
 
         <div class="comment-container">
             <h2>{{question.theme}}</h2>
-            <span>{{question.user.name}} {{question.user.surname}}</span>
+            <div class="comment-footer">
+                <app-tag-list [tagList]="question.tags"></app-tag-list>
+                <span>{{question.user.name}} {{question.user.surname}}</span>
+            </div>
         </div>
     </div>
 </mat-card>

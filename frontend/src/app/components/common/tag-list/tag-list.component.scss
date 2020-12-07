@@ -1,0 +1,6 @@
+:host(.question-card-tags) {
+    ::ng-deep .mat-chip-list-wrapper {
+        padding-left: 5rem;
+        padding-bottom: 1rem;
+    }
+}

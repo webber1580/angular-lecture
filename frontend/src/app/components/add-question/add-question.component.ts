@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class AddQuestionComponent {
 
+    public newTag = '';
     public newQuestion: Question = {
         rating: 0,
         theme: '',
@@ -20,6 +21,13 @@ export class AddQuestionComponent {
     };
 
     constructor(private questionService: QuestionService, private router: Router) { }
+
+    onAddTag() {
+        if (this.newTag) {
+            this.newQuestion.tags.push(this.newTag);
+            this.newTag = '';
+        }
+    }
 
     onQuestionAdd() {
         this.questionService.createQuestion(this.newQuestion).subscribe(

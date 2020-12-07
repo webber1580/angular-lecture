@@ -25,6 +25,8 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import { AddQuestionComponent } from './components/add-question/add-question.component';
 import { AddAnswerComponent } from './components/add-answer/add-answer.component';
+import {MatChipsModule} from '@angular/material/chips';
+import { TagListComponent } from './components/common/tag-list/tag-list.component';
 
 @NgModule({
     declarations: [
@@ -39,6 +41,7 @@ import { AddAnswerComponent } from './components/add-answer/add-answer.component
         CardAddCommentComponent,
         AddQuestionComponent,
         AddAnswerComponent,
+        TagListComponent,
     ],
     imports: [
         BrowserModule,
@@ -54,6 +57,7 @@ import { AddAnswerComponent } from './components/add-answer/add-answer.component
         MatFormFieldModule,
         MatInputModule,
         FormsModule,
+        MatChipsModule,
     ],
     providers: [QuestionService],
     bootstrap: [AppComponent]

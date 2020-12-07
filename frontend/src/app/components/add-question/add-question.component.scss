@@ -7,6 +7,19 @@
         margin: 0;
     }
 
+    .tags-container {
+        display: flex;
+        justify-content: space-between;
+
+        mat-form-field {
+            width: 75%;
+        }
+
+        button {
+            align-self: center;
+        }
+    }
+
     mat-form-field {
         width: 100%;
         margin-top: 1rem;

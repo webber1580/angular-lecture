@@ -52,9 +52,13 @@ mat-card {
             justify-content: space-between;
 
 
-            span {
-                margin: 0;
-                align-self: flex-end;
+            .comment-footer {
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    margin: .5rem 0;
+                }
             }
         }
     }
